@@ -25,9 +25,40 @@
  */
 
 #include <iostream>
+#include <cstdio>
+
+bool die1 [9] = {false};
+bool die2 [9] = {false};
+int squares [9][2] = {{0,1},{0,4},{0,9},{1,6},{2,5},{3,6},{4,9},{6,4},{8,1}};
+
+
+
+int numOfArrangements (){
+    int count = 0;
+    
+    for (int i =0; i<9; i++) {
+        die1[squares[i][0]] = true;
+        die2[squares[i][1]] = true;
+    }
+    std::cout<<"Die 1: ";
+    for (int i=0; i<10; i++) {
+        std::cout<<die1[i]<<",";
+    }
+    
+    std::cout<<"\n";
+    
+    std::cout<<"Die 2: ";
+    for (int i=0; i<10; i++) {
+        std::cout<<die2[i]<<",";
+    }
+                        
+    return count;
+}
 
 int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
+    
+    numOfArrangements();
+    std::cout<<"\n";
+    std::cout << "Hello World";
     return 0;
 }
